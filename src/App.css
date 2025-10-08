@@ -1,6 +1,4 @@
-
-
-/* Custom Styles for PNC SPA with Vite */
+/* Enhanced Custom Styles */
 .App {
   min-height: 100vh;
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
@@ -13,7 +11,7 @@
   border-radius: 5px;
 }
 
-/* Smooth transitions for page changes */
+/* Smooth transitions */
 main {
   animation: fadeIn 0.5s ease-in;
   min-height: calc(100vh - 76px);
@@ -24,7 +22,7 @@ main {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Custom card hover effects */
+/* Card animations */
 .card {
   transition: all 0.3s ease;
   border: none;
@@ -46,39 +44,42 @@ main {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
 }
 
-/* Button styling */
-.btn {
-  transition: all 0.3s ease;
-  margin-bottom: 3px;
+/* Breadcrumb styling */
+.breadcrumb {
+  background-color: transparent;
+  padding: 0.75rem 0;
 }
 
-.btn:hover {
-  transform: translateY(-2px);
+.breadcrumb-item a {
+  text-decoration: none;
 }
 
 /* Badge styling */
 .badge {
-  font-size: 0.7em;
-  padding: 0.4em 0.6em;
+  font-size: 0.75em;
+  padding: 0.5em 0.75em;
 }
 
-/* Responsive image styling */
+/* Loading states */
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Responsive images */
 .img-fluid {
   border-radius: 10px;
 }
 
-/* Custom shadow utilities */
-.shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+/* Dashboard specific styles */
+.dashboard-card {
+  min-height: 120px;
 }
 
-/* Loading animation */
-@keyframes pulse {
-  0% { opacity: 1; }
-  50% { opacity: 0.5; }
-  100% { opacity: 1; }
-}
-
-.loading {
-  animation: pulse 2s infinite;
+/* Authentication styles */
+.auth-container {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,7 +1,16 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate  } from "react-router-dom";
+import { useAuth } from '../context/AuthContext';
 
 const Header = () => {
+    const { user, logout, isAuthenticated } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+        navigate('/');
+    };
+
     return (
         <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
             <div className="container">
@@ -16,20 +25,93 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav ms-auto">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/" end>Home</NavLink>
+                            <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/">Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/mission-vision">Mission & Vision</NavLink>
+                            <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/mission-vision">Mission & Vision</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/gallery">Gallery</NavLink>
+                            <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/gallery">Gallery</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/about">About</NavLink>
+                            <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/about">About</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/contact">Contact</NavLink>
+                            <NavLink className={({isActive}) => isActive ? "nav-link active" : "nav-link"} to="/contact">Contact</NavLink>
                         </li>
+
+                        {/* DYNAMIC ROUTES EXAMPLE */}
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                Dynamic Routes
+                            </a>
+                            <ul className="dropdown-menu">
+                                <li>
+                                <NavLink className="dropdown-item" to="/gallery/1">
+                                    Gallery Item 1
+                                </NavLink>
+                                </li>
+                                <li>
+                                <NavLink className="dropdown-item" to="/gallery/2">
+                                    Gallery Item 2
+                                </NavLink>
+                                </li>
+                                <li>
+                                <NavLink className="dropdown-item" to="/about/team/john">
+                                    Team Member: John
+                                </NavLink>
+                                </li>
+                                <li>
+                                <NavLink className="dropdown-item" to="/about/team/jane">
+                                    Team Member: Jane
+                                </NavLink>
+                                </li>
+                            </ul>
+                        </li>
+
+                        {/* PROTECTED ROUTES ACCESS */}
+                        {isAuthenticated && (
+                        <li className="nav-item">
+                            <NavLink 
+                            className={({ isActive }) => 
+                                isActive ? "nav-link active" : "nav-link"
+                            } 
+                            to="/dashboard"
+                            >
+                            Dashboard
+                            </NavLink>
+                        </li>
+                        )}
+                    </ul>
+                    
+                    {/* AUTHENTICATION SECTION */}
+                    <ul className="navbar-nav">
+                        {isAuthenticated ? (
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            Welcome, {user.name}
+                            </a>
+                            <ul className="dropdown-menu">
+                            <li>
+                                <span className="dropdown-item-text">
+                                <small>Logged in as: {user.role}</small>
+                                </span>
+                            </li>
+                            <li><hr className="dropdown-divider" /></li>
+                            <li>
+                                <button className="dropdown-item" onClick={handleLogout}>
+                                Logout
+                                </button>
+                            </li>
+                            </ul>
+                        </li>
+                        ) : (
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/login">
+                            Login
+                            </NavLink>
+                        </li>
+                        )}
                     </ul>
                 </div>
             </div>
