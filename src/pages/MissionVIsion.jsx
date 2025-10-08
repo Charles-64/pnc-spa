@@ -7,6 +7,7 @@ const MissionVision = () => {
                 <h1 className="text-center mb-5">
                     Mission & Vision
                 </h1>
+                {/* For Mission */}
                 <div className="card mb-5">
                     <div className="card-body">
                         <h2 className="card-title text-primary text-center">Mission</h2>
@@ -17,6 +18,7 @@ const MissionVision = () => {
                         </p>
                     </div>
                 </div>
+                {/* For Vision */}
                 <div className="card">
                     <div className="card-body">
                         <h2 className="card-title text-primary text-center">Vision</h2>
