@@ -1,7 +1,8 @@
 /* Enhanced Custom Styles */
 .App {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  /* Deep Blue & Violet Gradient (Modern & Elegant) */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
 /* Active navigation link styling */
@@ -40,8 +41,8 @@ main {
 }
 
 .form-control:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.1);
+  border-color: #6c63ff; /* matched to theme */
+  box-shadow: 0 0 0 0.2rem rgba(108, 99, 255, 0.2);
 }
 
 /* Breadcrumb styling */
@@ -58,6 +59,33 @@ main {
 .badge {
   font-size: 0.75em;
   padding: 0.5em 0.75em;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  color: #ffffff; /* ensures text is readable */
+}
+
+/* Primary Button - Bright Violet */
+.btn-primary {
+  background-color: #6c63ff;
+}
+
+.btn-primary:hover {
+  background-color: #574bdb;
+}
+
+/* Secondary Button - Lighter Blue */
+.btn-secondary {
+  background-color: #4a90e2;
+}
+
+.btn-secondary:hover {
+  background-color: #357abd;
 }
 
 /* Loading states */
