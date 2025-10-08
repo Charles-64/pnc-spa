@@ -62,32 +62,39 @@ main {
 
 /* Buttons */
 .btn {
-  border: none;
-  font-weight: 500;
+  border: none !important;
+  font-weight: 600;
   border-radius: 6px;
   transition: all 0.3s ease;
-  color: #ffffff; /* ensures text is readable */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  color: #ffffff !important; /* ensures text readable */
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .btn-primary {
-  background-color: #f9a825;
+  background-color: #f9a825 !important;
 }
 
 .btn-primary:hover {
-  background-color: #fbc02d;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  background-color: #fbc02d !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-
 .btn-secondary {
-  background-color: #ff7043;
+  background-color: #ff7043 !important;
 }
 
 .btn-secondary:hover {
-  background-color: #ff8a65;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+  background-color: #ff8a65 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Make buttons always visible inside cards */
+.card .btn {
+  margin-top: 10px;
+  display: inline-block;
 }
 
 /* Loading states */
