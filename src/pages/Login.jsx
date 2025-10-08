@@ -27,7 +27,7 @@ const Login = () => {
 
   // Demo credentials helper
   const fillDemoCredentials = () => {
-    setEmail('admin@pnc.edu.kh');
+    setEmail('admin@pnc.edu.ph');
     setPassword('password');
   };
 
@@ -95,7 +95,7 @@ const Login = () => {
                   Use Demo Credentials
                 </button>
                 <div className="mt-2 small text-muted">
-                  Email: admin@pnc.edu.kh<br />
+                  Email: admin@pnc.edu.ph<br />
                   Password: password
                 </div>
               </div>

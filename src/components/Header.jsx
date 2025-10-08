@@ -57,13 +57,13 @@ const Header = () => {
                                 </NavLink>
                                 </li>
                                 <li>
-                                <NavLink className="dropdown-item" to="/about/team/john">
-                                    Team Member: John
+                                <NavLink className="dropdown-item" to="/about/team/1">
+                                    Team Member: Abaquita
                                 </NavLink>
                                 </li>
                                 <li>
-                                <NavLink className="dropdown-item" to="/about/team/jane">
-                                    Team Member: Jane
+                                <NavLink className="dropdown-item" to="/about/team/2">
+                                    Team Member: Acla
                                 </NavLink>
                                 </li>
                             </ul>

@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { createContext, useState, useContext } from 'react';
 
 const AuthContext = createContext();
@@ -20,7 +21,7 @@ export const AuthProvider = ({ children }) => {
     // Simulate API call
     return new Promise((resolve, reject) => {
       setTimeout(() => {
-        if (email === 'admin@pnc.edu.kh' && password === 'password') {
+        if (email === 'admin@pnc.edu.ph' && password === 'password') {
           const userData = {
             id: 1,
             name: 'Admin User',
